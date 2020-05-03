@@ -9,27 +9,29 @@ console.log(todoList);
 
 
 button.addEventListener('click', function(e){
-
+    
     e.preventDefault();
-
+        
     // Create element
     const newItem = document.createElement('li');
-
+    
     // adding class
     newItem.classList.add('item');
-
+    
     // Append ellement
     newItem.innerText = nameInput.value;
-
     todoList.appendChild(newItem);
+    
+    // Update count
     todoNumber.innerText = items.length;
-
+    
     // remove value
     nameInput.value="";
-
+    
     // Adding event listener
     newItem.addEventListener("click", deleteItem);
 
+    console.log(nameInput);
 });
 
 function deleteItem(e){
