@@ -13,8 +13,20 @@ button.addEventListener('click', function(){
     newItem.innerText = `Item ${items.length+1}`;
     todoList.appendChild(newItem);
     todoNumber.innerText = items.length;
+    newItem.addEventListener("click", deleteItem);
 });
 
-button.addEventListener("click", function(){
-    mainTitle.classList.toggle('spectacular');
+function deleteItem(e){
+    e.stopPropagation();
+    e.target.remove();
+}
+todoList.addEventListener('click', function(){
+    todoList.classList.toggle('fade');
 })
+
+
+// button.addEventListener("keydown", function(){
+//     if (event.keyCode===81) {
+//         mainTitle.classList.toggle('spectacular');
+//     }
+// })
